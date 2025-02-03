@@ -5,26 +5,14 @@
         "authProtocol": "default",
         "enableSsl": "Disabled"
       },
-      "server": "localhost",
-      "port": 3306,
-      "driver": "MySQL",
-      "name": "Biblioteca",
-      "database": "biblioteca",
-      "username": "root"
-    },
-    {
-      "mysqlOptions": {
-        "authProtocol": "default",
-        "enableSsl": "Disabled"
-      },
       "previewLimit": 50,
       "server": "localhost",
       "port": 3306,
       "driver": "MySQL",
-      "database": "biblioteca",
-      "name": "conexao",
+      "name": "biblioteca",
+      "database": "acervo",
       "username": "root",
-      "password": "1948"
+      "password": ""
     }
   ],
   "C_Cpp_Runner.cCompilerPath": "gcc",

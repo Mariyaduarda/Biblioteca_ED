@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include"../../model/include/model_livros.h"
 
+//view mostra menu de entrada
 void mostrarMenu() {
-    printf("\n===== Sistema de Biblioteca =====\n");
-    printf("1. Adicionar Livro\n");
+    printf("\n------- Sistema de Biblioteca -------\n");
+    printf("1. Cadastrar Livro\n");
     printf("2. Listar Livros\n");
     printf("3. Buscar Livro\n");
     printf("4. Remover Livro\n");
@@ -11,7 +12,9 @@ void mostrarMenu() {
     printf("Escolha uma opção: ");
 }
 
-void exibirLivro(Livro livro) {
-    printf("Código: %d\nTítulo: %s\nAutor: %s\nAno: %d\n", 
-           livro.codigo_id, livro.titulo, livro.autor, livro.ano_publicacao);
+//view mostrar livros
+void listar_livro(Livro livro) {
+    printf("Código: %d\nTítulo: %s\nAutor: %s\nISNB:%s\nAno: %d\nIdioma: %s\nEditora: %s\nGênero: %s\nDisponível: %s\n", 
+           livro.codigo_id, livro.titulo, livro.autor, livro.isbn, livro.ano_publicacao, livro.idioma, livro.editora, 
+           livro.genero, livro.disponivel);
 }
