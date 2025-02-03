@@ -5,8 +5,8 @@
 
 #define DB_HOST "localhost"
 #define DB_USER "root"
-#define DB_PASS "1948"
-#define DB_NAME "meus_livros"
+#define DB_PASS "2025"
+#define DB_NAME "acervo"
 #define DB_PORT 3306
 
 MYSQL* conectarBanco();

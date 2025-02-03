@@ -10,7 +10,7 @@ void limpa_buffer(){
 }
 
 //alocar string dinamicamente
-char* lerString(){
+char* ler_string(){
     char buffer[1024];
     fgets(buffer, sizeof(buffer), stdin);
     buffer[strspn(buffer, "\n")] = '\0';
@@ -21,8 +21,8 @@ char* lerString(){
 
 Biblioteca* cria_biblioteca(){
     Biblioteca* biblioteca = (Biblioteca*)malloc(sizeof(Biblioteca));
-    biblioteca->primeiro = NULL;  //primeiro nó, vulgo livro
-    biblioteca->total_livros = 0; //qnt de livros cadastrada = nula
+    biblioteca->primeiro = NULL;
+    biblioteca->total_livros = 0; // Inicializa como 0
     return biblioteca;
 }
 
@@ -52,8 +52,7 @@ void cadastrar_livro(Biblioteca *biblioteca){
     novo->proximo = NULL;
     novo->codigo_id = biblioteca->total_livros + 1;
     
-
-   printf("Digite o título do livro: ");
+   printf("Digite o titulo do livro: ");
     novo->titulo = ler_string();
 
     printf("Digite o autor do livro: ");
@@ -72,10 +71,10 @@ void cadastrar_livro(Biblioteca *biblioteca){
     printf("Digite a editora do livro: ");
     novo->editora = ler_string();
 
-    printf("Digite o gênero do livro: ");
+    printf("Digite o genero do livro: ");
     novo->genero = ler_string();
 
-    printf("Está disponível (1 para Sim, 0 para Não): ");
+    printf("Está disponivel (1 para Sim, 0 para Não): ");
     scanf("%d", &novo->disponivel);
     limpa_buffer();
 
@@ -113,7 +112,6 @@ void listar_livro(Biblioteca *biblioteca){
     printf("\n");//add linha no final da execucao p aparencia
     
 }
-
 //atualiza a info dos livros
 void atualizar_livro(Biblioteca *biblioteca){
     int ID;
@@ -123,6 +121,7 @@ void atualizar_livro(Biblioteca *biblioteca){
     limpa_buffer();
 
     Livro *atual = biblioteca->primeiro;
+    //busca binaria
     while (atual != NULL && atual->codigo_id != ID)
     {
         atual = atual->proximo;
@@ -130,7 +129,7 @@ void atualizar_livro(Biblioteca *biblioteca){
     //se o ponteiro atual for = a null sai do prgrama
     if(atual == NULL){
         printf("Livro não encontrado.");
-        return 0; //sai do programa
+        return; //sai do programa
     }
     
     //libera as string antigas
@@ -173,14 +172,16 @@ void atualizar_livro(Biblioteca *biblioteca){
 }
 void deletar_livro(Biblioteca *biblioteca){
     //verifica se ha livros para excluir
-    if(biblioteca->primeiro = NULL){
+    if(biblioteca->primeiro == NULL){
         printf("Biblioteca vazia.");
-        return 0;
+        return;
     }
     int ID;
     printf("Digite o ID do livro para exclusão:\n");
     scanf("%d", &ID);
     limpa_buffer();
+
+    //funcao hash
 
     Livro *atual = biblioteca->primeiro;
     Livro *anterior = NULL;
@@ -193,16 +194,15 @@ void deletar_livro(Biblioteca *biblioteca){
     }
     if(atual == NULL){
         printf("Livro não encontrado.\n");
-        return 0;
+        return;
     }
-    if(anterior = NULL){ //removendo nó da lista
+    if(anterior == NULL){ //removendo nó da lista
         //removendo o primeito elemento
         biblioteca->primeiro = atual->proximo;
     }
     else{
         anterior->proximo = atual->proximo;
     }
-
     //libera a memoria do livro
     free(atual->titulo);
     free(atual->autor);
@@ -214,6 +214,47 @@ void deletar_livro(Biblioteca *biblioteca){
 
     biblioteca->total_livros--;
     printf("Êxito ao deletar livros.\n");
-    
 }
 
+/*int main() {
+    Biblioteca *biblioteca = cria_biblioteca();  // Cria a biblioteca
+
+    int opcao;
+    do {
+        // Exibe o menu de opções
+        printf("\n----- Sistema de Biblioteca -----\n");
+        printf("1. Cadastrar livro\n");
+        printf("2. Listar livros\n");
+        printf("3. Atualizar livro\n");
+        printf("4. Deletar livro\n");
+        printf("5. Sair\n");
+        printf("Escolha uma opaoo: ");
+        scanf("%d", &opcao);
+        limpa_buffer();
+
+        switch (opcao) {
+            case 1:
+                cadastrar_livro(biblioteca);  // Função para cadastrar livro
+                break;
+            case 2:
+                listar_livro(biblioteca);  // Função para listar livros
+                break;
+            case 3:
+                atualizar_livro(biblioteca);  // Função para atualizar livro
+                break;
+            case 4:
+                deletar_livro(biblioteca);  // Função para deletar livro
+                break;
+            case 5:
+                printf("Saindo do sistema...\n");
+                break;
+            default:
+                printf("Opcao invalida! Tente novamente.\n");
+                break;
+        }
+    } while (opcao != 5);
+
+    libera_biblioteca(biblioteca);  // Libera a memória alocada ao final
+    return 0;
+}
+*/

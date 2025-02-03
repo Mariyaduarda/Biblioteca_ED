@@ -22,7 +22,7 @@ typedef struct{
     int total_livros; //qnt de livros ja cadastrados 
 }Biblioteca;
 
-Biblioteca* cria_biblioteca(int livros_total_inicial);
+Biblioteca* cria_biblioteca();
 void libera_biblioteca(Biblioteca *biblioteca); //libera a memoria alocada para a bibli
 void cadastrar_livro(Biblioteca *biblioteca);   //funcionalidade de cadastro de livros
 void listar_livro(Biblioteca *biblioteca);      //mostra todos os livros cadastrados
