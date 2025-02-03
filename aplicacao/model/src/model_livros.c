@@ -114,6 +114,7 @@ void listar_livro(Biblioteca *biblioteca){
     
 }
 
+//atualiza a info dos livros
 void atualizar_livro(Biblioteca *biblioteca){
     int ID;
     printf("Digite o ID do livro para atualiza-lo: \n");
@@ -140,7 +141,7 @@ void atualizar_livro(Biblioteca *biblioteca){
     free(atual->editora);
     free(atual->genero);
 
-    //atualiza o livro
+    //atualiza o as novas info do livro
     printf("Digite o novo título do livro: ");
     atual->titulo = ler_string();
 
@@ -170,7 +171,49 @@ void atualizar_livro(Biblioteca *biblioteca){
     printf("Êxito ao atualizar livro.\n");
 
 }
-void deletar_livro(){
+void deletar_livro(Biblioteca *biblioteca){
+    //verifica se ha livros para excluir
+    if(biblioteca->primeiro = NULL){
+        printf("Biblioteca vazia.");
+        return 0;
+    }
+    int ID;
+    printf("Digite o ID do livro para exclusão:\n");
+    scanf("%d", &ID);
+    limpa_buffer();
 
+    Livro *atual = biblioteca->primeiro;
+    Livro *anterior = NULL;
+
+    //procura o lvro
+    while (atual != NULL && atual->codigo_id != ID)
+    {
+        anterior = atual;
+        atual = atual->proximo;
+    }
+    if(atual == NULL){
+        printf("Livro não encontrado.\n");
+        return 0;
+    }
+    if(anterior = NULL){ //removendo nó da lista
+        //removendo o primeito elemento
+        biblioteca->primeiro = atual->proximo;
+    }
+    else{
+        anterior->proximo = atual->proximo;
+    }
+
+    //libera a memoria do livro
+    free(atual->titulo);
+    free(atual->autor);
+    free(atual->isbn);
+    free(atual->idioma);
+    free(atual->editora);
+    free(atual->genero);
+    free(atual);
+
+    biblioteca->total_livros--;
+    printf("Êxito ao deletar livros.\n");
+    
 }
 
