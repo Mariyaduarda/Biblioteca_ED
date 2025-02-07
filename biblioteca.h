@@ -30,6 +30,20 @@ typedef struct {
     int quantidade;        //contador de elementos na hash
 } HashTable;
 
+/*estruturas fila*/
+typedef struct NodoFila {
+    Livro* livro;
+    int idUsuario;
+    struct NodoFila* proximo;
+} NodoFila;
+
+typedef struct {
+    NodoFila* inicio;
+    NodoFila* fim;
+    int tamanho;
+} FilaEspera;
+/*estruturas fila -fim-*/
+
 
 void inicializaLista(ListaLivro* lista);
 void adicionaLivro(ListaLivro* lista, Livro* livro);
@@ -52,6 +66,18 @@ void inserir_livro(HashTable *hasht, Livro *livro);
 Livro* buscar_por_id(HashTable *hasht, int id);
 void remover_livro(HashTable *hasht, int id);
 void destruir_hash_table(HashTable *hasht);
+
+//fila
+void inicializarFila(FilaEspera* fila);
+int filaVazia(FilaEspera* fila);
+void enfileirar(FilaEspera* fila, Livro* livro, int idUsuario);
+int desenfileirar(FilaEspera* fila);
+void imprimirFila(FilaEspera* fila);
+
+//gerenciamento de disponibilidade usando fila
+void verificarDisponibilidade(Livro* livros[], int numLivros);
+void emprestarLivro(Livro* livros[], int numLivros, FilaEspera* fila, int idLivro, int idUsuario);
+void devolverLivro(Livro* livros[], int numLivros, FilaEspera* fila, int idLivro);
 
 #endif
 

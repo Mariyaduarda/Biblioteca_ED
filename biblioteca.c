@@ -179,14 +179,14 @@ int inserirLivroHash(HashTable* ht, Livro* livro) {
     int index = hashFunction(livro->id);
     int tentativas = 0;
     
-    // Tratamento de colisão com sondagem linear
+    //tratamento de colisão com sondagem linear
     while (tentativas < 1000) {
         if (ht->tabela[index] == NULL) {
             ht->tabela[index] = livro;
             ht->quantidade++;
             return 1;
         }
-        index = (index + 1) % 1000;  // Próxima posição (sondagem linear)
+        index = (index + 1) % 1000;  //próxima posição - sondagem linear
         tentativas++;
     }
     
@@ -198,7 +198,7 @@ Livro* buscarLivroHash(HashTable* ht, int id) {
     int index = hashFunction(id);
     int tentativas = 0;
     
-    // Busca com sondagem linear
+    //busca com sondagem linear
     while (tentativas < 1000) {
         if (ht->tabela[index] == NULL) {
             return NULL;
@@ -232,7 +232,7 @@ void salvarHashParaArquivo(HashTable* ht, const char* nomeArquivo) {
 }
 
 void carregarArquivoParaHash(HashTable* ht, const char* nomeArquivo) {
-    FILE* arquivo = fopen(nomeArquivo, "r");
+    FILE* arquivo = fopen(/*nomeArquivo*/, "r");
     if (!arquivo) {
         printf("Arquivo não encontrado.\n");
         return;
