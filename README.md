@@ -21,7 +21,7 @@ cd /c/example/biblioteca
 ```
 Exemplo de uso:
 ```bash
-./biblioteca.bin data/entrada.txt data/saida.txt
+./biblioteca.bin entrada.txt saida.txt
 ```
 
 ## 📜 Formato do Arquivo de Entrada
