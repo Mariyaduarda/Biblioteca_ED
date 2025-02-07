@@ -40,7 +40,7 @@ F
 
 ---
 
-📌 **Autor:** Yasmim Stefane Faria  
+📌 **Autor:** Yasmim Stefane Faria  e Maria Eduarda Siqueira
 📌 **Disciplina:** Estruturas de Dados  
 
 ---
