@@ -11,7 +11,8 @@ cd /c/example/biblioteca
 
 ### 2️⃣ Compile o programa:
 ```bash
-gcc src/biblioteca.c src/main.c -o biblioteca.bin -lm
+    gcc biblioteca.c main.c -lm -o biblioteca.bin
+
 ```
 
 ### 3️⃣ Execute o programa:
