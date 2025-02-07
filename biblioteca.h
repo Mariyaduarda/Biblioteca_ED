@@ -26,6 +26,7 @@ typedef struct {
 
 void inicializaLista(ListaLivro* lista);
 void adicionaLivro(ListaLivro* lista, Livro* livro);
+void removeLivro(ListaLivro* lista, int id);
 void imprimirLista(ListaLivro* lista);
 void lerArquivoEntrada(char *StrEntrada,ListaLivro* lista);
 void menuBiblioteca(ListaLivro* lista);
