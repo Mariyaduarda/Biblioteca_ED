@@ -2,10 +2,23 @@
 #include <stdlib.h>
 #include "biblioteca.h"
 
+int main(int argc, char **argv){
 
+    // confere se o num de argumentos ta certo
+    if (argc != 3)
+    {
+        printf("\nErro de Sintaxe\n");
+        printf("Usar: ./biblioteca.bin <entrada> <saida>\n\n");
+        return 1;
+    }
 
-int main() {
-    mensagem(); // Chamando a função da biblioteca
-    return 0;
+    // se os argumentos estao certos, recebe eles
+    char *StrEntrada = argv[1];
+    char *StrSaida = argv[2];
+    ListaLivro lista;
+    inicializaLista(&lista);
+
+    lerArquivoEntrada(StrEntrada, &lista);
+    imprimirLista(&lista);
 }
 
