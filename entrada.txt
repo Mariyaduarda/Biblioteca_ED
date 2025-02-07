@@ -1,0 +1,32 @@
+# Instancia A:
+I 10001 OSenhorDosAneis,JRRRTolkien,1954,Fantasia
+I 10002 DomCasmurro,MachadoDeAssis,1899,Romance
+I 10003 1984,GeorgeOrwell,1949,FiccaoCientifica
+I 10004 OrgulhoEPreconceito,JaneAusten,1813,Romance
+I 10005 OPequenoPrincipe,AntoineDeSaintExupery,1943,Infantil
+I 10006 CrimeEPunicao,FiodorDostoievski,1866,Ficcao
+I 10007 Hamlet,WilliamShakespeare,1603,Drama
+I 10008 MemoriasPostumasDeBrasCubas,MachadoDeAssis,1881,Romance
+I 10009 OGrandeGatsby,FScottFitzgerald,1925,Romance
+I 10010 ARevolucaoDosBichos,GeorgeOrwell,1945,Ficcao
+I 10011 OCodicoDaVinci,DanBrown,2003,Suspense
+I 10012 AsCronicasDeNarnia,CSLewis,1950,Fantasia
+I 10013 IT,StephenKing,1986,Terror
+I 10014 MobyDick,HermanMelville,1851,Aventura
+I 10015 ONomeDaRosa,UmbertoEco,1980,Misterio
+I 10016 OsMiseraveis,VictorHugo,1862,Romance
+I 10017 OApanhadorNoCampoDeCenteio,JD Salinger,1951,Ficcao
+I 10018 OHobbit,JRRRTolkien,1937,Fantasia
+I 10019 Drácula,BramStoker,1897,Terror
+I 10020 CemAnosDeSolidao,GabrielGarciaMarquez,1967,Romance
+I 10021 GuerraEPaz,LeonTolstoi,1869,Historico
+I 10022 Fahrenheit451,RayBradbury,1953,FiccaoCientifica
+I 10023 AdmiravelMundoNovo,AldousHuxley,1932,FiccaoCientifica
+I 10024 OCorcundaDeNotreDame,VictorHugo,1831,Drama
+I 10025 OSolÉParaTodos,HarperLee,1960,Romance
+I 10026 PercyJacksonOLadrãoDeRaios,RickRiordan,2005,Fantasia
+I 10027 AsBrumasDeAvalon,MarionZimmerBradley,1983,Fantasia
+I 10028 EnsaioSobreACegueira,JoseSaramago,1995,Ficcao
+I 10029 OSilencioDosInocentes,ThomasHarris,1988,Suspense
+I 10030 HarryPotterEAPedraFilosofal,JKRowling,1997,Fantasia
+F
