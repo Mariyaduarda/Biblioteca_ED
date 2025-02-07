@@ -23,6 +23,53 @@ void adicionaLivro(ListaLivro* lista, Livro* livro) {
     lista->ultimo = novoNodo;
 }
 
+void removeLivro(ListaLivro* lista, int id){
+    //procura na lista, algum item com esse id, aí remove ele
+
+    // variaveis de auxilio
+    NodoLivro atual = lista->primeiro;
+    NodoLivroanterior = NULL;
+
+    //enquanto nao chegar no final, percorre procurando esse id
+    while (atual != NULL) {
+        //confere se o atual e o q tem q deletar
+        if (atual->livro->id == id) {
+
+            // se achei o item, mas e o primeiro
+            if (anterior == NULL) {
+                // atualiza o primeiro da lista
+                lista->primeiro = atual->proximo;
+                // se e' o ultimo, atualiza a lista
+                if (atual->proximo == NULL) lista->ultimo = NULL;
+            }
+
+            // se achei mas nao e' o primeiro
+            else {
+                //atualiza o proximo do anterior
+                anterior->proximo = atual->proximo;
+                // se e' o ultimo, atualiza a lista
+                if (atual == lista->ultimo) lista->ultimo = anterior;
+            }
+
+            // libera a memmoria do item
+            free(atual->livro);  // Libera a memória do livro
+            free(atual);         // Libera a memória do nó
+            printf("\n - Livro com id %d foi removido com sucesso", id);
+            return;
+
+        }
+
+        //avanca as variaveis
+        anterior = atual;
+        atual = atual->proximo;
+    }
+
+    // se nao achou o item, mostra isso
+    printf("\n - Nao foi encontrado nenhum livro com o id %d. - ", id);
+    return;
+
+}
+
 void imprimirLista(ListaLivro* lista) {
     NodoLivro* atual = lista->primeiro;
     while (atual != NULL) {
