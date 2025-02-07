@@ -6,6 +6,7 @@ void inicializaLista(ListaLivro* lista) {
     lista->primeiro = NULL;
     lista->ultimo = NULL;
 }
+
 void adicionaLivro(ListaLivro* lista, Livro* livro) {
     NodoLivro* novoNodo = (NodoLivro*)malloc(sizeof(NodoLivro));
     novoNodo->livro = livro;
@@ -18,6 +19,7 @@ void adicionaLivro(ListaLivro* lista, Livro* livro) {
     }
     lista->ultimo = novoNodo;
 }
+
 void imprimirLista(ListaLivro* lista) {
     NodoLivro* atual = lista->primeiro;
     while (atual != NULL) {
@@ -27,6 +29,7 @@ void imprimirLista(ListaLivro* lista) {
         atual = atual->proximo;
     }
 }
+
 void lerArquivoEntrada(char *StrEntrada,ListaLivro* lista) {
 
     char Controle;

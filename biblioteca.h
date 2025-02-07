@@ -23,8 +23,10 @@ typedef struct {
   NodoLivro* ultimo;
 } ListaLivro;
 
-void lerArquivoEntrada(char *StrEntrada,ListaLivro* lista);
 void inicializaLista(ListaLivro* lista);
+void adicionaLivro(ListaLivro* lista, Livro* livro);
 void imprimirLista(ListaLivro* lista);
+void lerArquivoEntrada(char *StrEntrada,ListaLivro* lista);
+
 #endif
 

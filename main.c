@@ -18,6 +18,7 @@ int main(int argc, char **argv){
     ListaLivro lista;
     inicializaLista(&lista);
 
+    // traz o arquivo de texto para a memoria, guardando na lista
     lerArquivoEntrada(StrEntrada, &lista);
     imprimirLista(&lista);
 }
