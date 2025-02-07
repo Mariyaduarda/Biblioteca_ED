@@ -11,6 +11,7 @@ typedef struct Livro{
   char titulo[200];
   char autor[200];
   char genero[200];
+  int disponivel; //1 para disponivel e 0 para indis.
 }Livro;
 
 typedef struct NodoLivro {
@@ -27,6 +28,10 @@ void inicializaLista(ListaLivro* lista);
 void adicionaLivro(ListaLivro* lista, Livro* livro);
 void imprimirLista(ListaLivro* lista);
 void lerArquivoEntrada(char *StrEntrada,ListaLivro* lista);
+void menuBiblioteca(ListaLivro* lista);
+void verificaDisponibildiade(ListaLivro* lista);
+ 
+
 
 #endif
 

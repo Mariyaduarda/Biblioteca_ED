@@ -8,6 +8,7 @@ void inicializaLista(ListaLivro* lista) {
 }
 
 void adicionaLivro(ListaLivro* lista, Livro* livro) {
+    livro->disponivel = 1;// inicializa o disponivel
     NodoLivro* novoNodo = (NodoLivro*)malloc(sizeof(NodoLivro));
     novoNodo->livro = livro;
     novoNodo->proximo = NULL;
@@ -60,4 +61,18 @@ void lerArquivoEntrada(char *StrEntrada,ListaLivro* lista) {
                 return;
         }
     } while (1);
+}
+
+//livro dispponivel ou indisponivel verificacao
+void verificaDisponibildiade(ListaLivro* lista){
+  NodoLivro* atual = lista->primeiro;
+      while(atual != NULL){
+        Livro* livro = atual->livro;
+        if(livro->disponivel == 1){
+          printf("Livro disponivel: id %d, titulo %d", livro->id, livro->titulo);
+        } else {
+            printf("Livro indisponivel: id %d, titulo %d", livro->id, livro->titulo);
+        }
+        atual = atual->proximo;
+      }
 }
